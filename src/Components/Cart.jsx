@@ -4,6 +4,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import ItemCard from "./ItemCard";
 import { useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom";
+import SuprSendInbox from '@suprsend/react-inbox'
+import 'react-toastify/dist/ReactToastify.css' // needed for toast notifications, can be ignored if hideToast=true
 
 const Cart = () => {
 
@@ -37,6 +39,12 @@ const Cart = () => {
         <FaShoppingCart 
         onClick={() => setActiveCart(!activeCart)}
         className={`rounded-full shadow-md bg-white text-5xl p-3 fixed bottom-4 right-4 ${totalQty > 0 && "animate-bounce delay-500 transition-all"}`}/>
+
+      <SuprSendInbox
+        workspaceKey= "<workspace_key>"
+        subscriberId= "<subscriber_id>"
+        distinctId= "<distinct_id>"
+      />
     </>
   )}
 
