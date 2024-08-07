@@ -12,6 +12,13 @@ const Navbar = () => {
         <h1 className='text-2xl font-bold'>Treats Foods</h1>
       </div>
       <div>
+      <SuprSendInbox
+        bellComponent={() => <Bell></Bell>}
+        theme={{ badge: { backgroundColor: 'red' } }}
+        themeType={theme}
+        workspaceKey={process.env.NEXT_PUBLIC_SUPRSEND_WORKSPACE_KEY}
+        subscriberId={props.subscriber_id}
+        distinctId={props.distinct_id}/>
         <input 
           type="search" 
           name="search" 
